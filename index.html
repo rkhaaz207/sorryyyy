@@ -2,18 +2,20 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Permintaan Maaf</title>
+  <title>Permintaan Maaf Lucu</title>
   <style>
     body {
       background-color: #fce4ec;
       font-family: 'Comic Sans MS', cursive, sans-serif;
       text-align: center;
       padding: 50px;
+      overflow: hidden;
     }
 
     .face {
       font-size: 100px;
       transition: transform 0.3s ease;
+      animation: bounce 1s infinite;
     }
 
     .message {
@@ -44,6 +46,15 @@
       display: inline-block;
       max-width: 500px;
     }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
   </style>
 </head>
 <body>
@@ -51,18 +62,33 @@
   <div class="container">
     <div id="emoji" class="face">😢</div>
     <div id="text" class="message">
-      Maapin aku ya😢😢...<br>
-      Aku nggak sengaja, sumpah! 
+      Maapin aku yaaa...<br>
+      Aku nggak sengaja, sumpah! 😭
     </div>
-    <button onclick="maafDitekan()">Maapin Aku 😢😢😢😢</button>
+    <button onclick="maafDitekan()">Maapin Aku 😢</button>
   </div>
+
+  <!-- Confetti Script CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <script>
     function maafDitekan() {
-      document.getElementById('emoji').textContent = '😊';
-      document.getElementById('text').innerHTML = "Makasih ya udah maafin aku!<br>Aku janji nggak ngulangin lagiiii 😇";
+      // Ubah emoji dan pesan
+      const emoji = document.getElementById('emoji');
+      emoji.textContent = '🥳';
+      emoji.style.animation = 'none'; // hentikan animasi bounce
+      document.getElementById('text').innerHTML =
+        "Makasih ya udah maafin aku!<br>Aku janji nggak ngulangin lagi 😇";
+
+      // Ledakkan confetti!
+      confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
     }
   </script>
 
 </body>
 </html>
+
