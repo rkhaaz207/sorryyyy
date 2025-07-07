@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Permintaan Maaf</title>
+  <style>
+    body {
+      background-color: #fce4ec;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .face {
+      font-size: 100px;
+      transition: transform 0.3s ease;
+    }
+
+    .message {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+
+    button {
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #f50057;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      display: inline-block;
+      max-width: 500px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div id="emoji" class="face">😢</div>
+    <div id="text" class="message">
+      Maapin aku ya😢😢...<br>
+      Aku nggak sengaja, sumpah! 
+    </div>
+    <button onclick="maafDitekan()">Maapin Aku 😢😢😢😢</button>
+  </div>
+
+  <script>
+    function maafDitekan() {
+      document.getElementById('emoji').textContent = '😊';
+      document.getElementById('text').innerHTML = "Makasih ya udah maafin aku!<br>Aku janji nggak ngulangin lagiiii 😇";
+    }
+  </script>
+
+</body>
+</html>
